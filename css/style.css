@@ -1,0 +1,439 @@
+/* ======================= IMPORT DE LA FONT FAMILY ============================= */
+
+@import url('https://fonts.googleapis.com/css2?family=Poppins&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Quicksand&display=swap');
+
+/* =========================================================================== */
+
+* {
+    margin: 0;
+    padding: 0;
+}
+
+/* =============================================================================== */
+
+/* ============================= HEADER =================================== */
+
+header {
+    width: 100%;
+    height: 100vh;
+    background-image: url("../Image/bgheader.jpg");
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+/* =============================================================================== */
+
+/* ================================= NAV ======================================= */
+
+nav {
+    padding: 8px;
+}
+
+.logo {
+    float: left;
+    padding: 8px;
+    margin-left: 16px;
+    margin-top: 8px;
+}
+
+nav ul {
+    float: right;
+    padding: 4.3%;
+}
+
+nav ul li {
+    display: inline-block;
+}
+nav ul li:last-child {
+    margin-right: 24px;
+}
+
+nav ul li:not(:first-child) {
+    margin-left: 48px;
+}
+
+nav ul li a {
+    display: inline-block;
+    outline: none;
+    color: #ffd9cc;
+    font-family: 'Poppins', sans-serif;
+    text-transform: uppercase;
+    text-decoration: none;
+    font-size: 14px;
+    letter-spacing: 1.2px;
+    font-weight: 600;
+}
+
+/* ========================== CUSTOM MENU BURGER ============================== */
+
+#nav:checked + .nav-btn {
+    transform: rotate(45deg);
+}
+
+#nav:checked + .nav-btn i {
+    background-color: black;
+    transition: transform 0.2s ease;
+}
+
+#nav:checked + .nav-btn i:nth-child(1){
+    transform: translateY(6px) rotate(180deg);
+}
+#nav:checked + .nav-btn i:nth-child(2){
+    opacity: 0;
+}
+#nav:checked + .nav-btn i:nth-child(3) {
+     transform: translateY(-6px) rotate(90deg);
+}
+
+#nav:checked ~ .NavMenu {
+    z-index: 999;
+    opacity: 1;
+}
+
+#nav:checked ~ .NavMenu ul li a {
+    opacity: 1;
+    transform: translateX(0);
+}
+
+.hidden {
+    display: none;
+}
+/* ========================== MEDIA QUERIE ============================== */
+
+@media screen and (max-width:864px) {
+    .logo {
+        padding: 0;
+    }
+
+    .NavMenu ul {
+        position: absolute;
+        top: 50%;
+        width: 90%;
+        transform: translateY(-50%);
+        /* Comme un top dans position il le place en vertical */
+    }
+
+    .NavMenu ul li {
+        display: block;
+        /* Mettre les elments en block */
+        float: none;
+        /* Retire tout les float declare au par-avant */
+        width: 100%;
+        text-align: right;
+        margin-bottom: 10px;
+    }
+
+    .NavMenu {
+        width: 100%;
+        height: 100%;
+        opacity: 0;
+        transition: all 0.2s ease;
+        position: fixed;
+        top: 0;
+        left: 0;
+        z-index: -1; 
+        background-color: #fff;
+    }
+
+    /*=============== Crée le menu burger =========================*/
+
+    .nav-btn i {
+        display: block;
+        width: 20px;
+        height: 2px;
+        background-color: black;
+        border-radius: 2px;
+        margin-left: 14px;
+    }
+
+    .nav-btn {
+        position: fixed;
+        right: 10px;
+        top: 50px;
+        display: block;
+        width: 48px;
+        height: 48px;
+        cursor: pointer;
+        border-radius: 50%;
+        z-index: 9999;
+    }
+
+    .NavMenu ul li a {
+        padding: 10px 24px;
+        opacity: 0;
+        color: #ffd9cc;
+        font-size: 14px;
+        font-weight: 600;
+        letter-spacing: 1.2px;
+        transform: translateX(-20px);
+        /* Deplacer en horizontal */
+        transition: all 0.2 ease;
+    }
+
+    .NavMenu ul li:not(:first-child) {
+        margin-left: 0;
+    }
+
+    .nav-btn i:nth-child(1) {
+        margin-top: 16px;
+    }
+
+    .nav-btn i:nth-child(2) {
+        margin-top: 4px;
+        opacity: 1;
+    }
+
+    .nav-btn i:nth-child(3) {
+        margin-top: 4px;
+    }
+
+}
+
+/* =========================================== SECTION UNE ==================================================== */
+
+#SectionUne {
+    height: 100%;
+    width: 100%;
+    padding-top: 5%;
+}
+.content {
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    flex-wrap: wrap; 
+}
+.block {
+    text-align: center;
+    padding: 2%;
+}
+
+.blockText h2 {
+    color: red;
+    font-size: 25px;
+    line-height: 40px;
+    font-family: 'Poppins', sans-serif;
+}
+.blockText p {
+    color: black;
+    font-size: 13px;
+    line-height: 20px;
+    font-family: 'Quicksand',sans-serif;
+}
+
+/* =========================================== SECTION DEUX ==================================================== */
+
+#SectionDeux {
+    height: 100%;
+    width: 100%;
+    background-color: #F5F5F5;
+    padding-top: 5%;
+}
+.container {
+    display: flex;
+    justify-content: space-around;
+    width: 100%;
+    flex-wrap: wrap;
+}
+.Nous {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+.Nous h2 {
+    color: #ffd9cc;
+    font-size: 65px;
+    font-family: 'Poppins', sans-serif;
+    font-weight: 600;
+}
+.Nous p {
+    color: black;
+    font-size: 16.5px;
+    line-height: 25px;
+   font-family: 'Quicksand',sans-serif;
+   margin-bottom: 4%;
+}
+.NousImg img {
+    box-shadow: 12px 12px 32px -9px black;
+    border-radius: 10px;
+}
+.NousImg {
+    padding-bottom: 65px;
+}
+
+@media screen and (max-width: 1140px) {
+    .container {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+    }
+}
+@media screen and (max-width: 630px) {
+    .Nous p {
+        font-size: 12.5px;
+        line-height: 20px;
+    }
+    .Nous h2 {
+        font-size: 60px;
+    }
+    .NousImg img {
+        width: 80%;
+    }
+}
+
+/* =========================================== SECTION TROIS ==================================================== */
+
+#SectionTROIS {
+    min-height: 100vh;
+    text-align: center;
+}
+
+.SectionTitre{
+    text-align: center;
+    padding: 3%;
+    color: red;
+    font-size: 40px;
+    font-family: 'Poppins',sans-serif;
+    font-weight: bolder;
+}
+
+.SectionTrois-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transform-style: preserve-3d ;
+    width: 100%;
+    flex-wrap: wrap;
+    
+}
+
+.card {
+    position: relative;
+    width: 350px;
+    height: 350px;
+    margin: 20px;
+    transform-style: preserve-3d ;
+    perspective: 1000px;
+}
+.card .box {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    transform-style: preserve-3d;
+    transition: 1s ease;
+}
+.card .box .ImgBx {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+}
+.card .box .ImgBx img {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    border-radius: 10px;
+    box-shadow: 12px 12px 32px -9px black;
+    object-fit: cover; /* Permet de mettre des element en cover (video et autre ) not image */
+}
+
+.card .box .contentBx {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transform-style: preserve-3d;
+    transform: rotateY(180deg);
+    backface-visibility: hidden;
+}
+.card .box .contentBx div {
+    transform-style: preserve-3d;
+    padding: 20px;
+    background-color: #ffd9cc;
+    transform: translateZ(100px);
+    border-radius: 10px;
+}
+.card:hover .box {
+    transform: rotateY(180deg);
+}
+
+.card .box .contentBx div h2 {
+    color: white;
+    font-size: 19px;
+    font-weight: 600;
+    letter-spacing: 1px;
+    font-family: 'Poppins', sans-serif;
+    ;
+}
+
+.contentBx div {
+    text-align: center;
+    line-height: 1.5;
+}
+
+.card .box .contentBx div h4 {
+    color: red;
+    font-style: italic;
+    font-size: 16px;
+    letter-spacing: 1px;
+    font-family: 'Quicksand', sans-serif;
+}
+
+.card .box .contentBx div h6 {
+    color: whitesmoke;
+    font-weight: bold;
+    font-size: 13px;
+    letter-spacing: 1px;
+    font-family: 'Quicksand', sans-serif;
+}
+
+
+.SectionTroisBtn {
+    z-index: 1;
+    position: relative;
+    font-size: inherit;
+    font-family: inherit;
+    color: white;
+    padding: 0.5em 1em;
+    outline: none;
+    border: none;
+    background-color: hsl(236, 32%, 26%);
+}
+
+.SectionTroisBtn::before {
+    content: '';
+    z-index: -1;
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background-color: #fc2f70;
+    transform-origin: center left;
+    transform: scaleX(0);
+    transition: transform 0.25s ease-in-out;
+}
+
+.SectionTroisBtn:hover {
+    cursor: pointer;
+}
+
+.SectionTroisBtn:hover::before {
+    transform-origin: center right;
+    transform: scaleX(1);
+}
+
+.SectionTroisBlockbtn {
+    padding: 3%;
+}
+
